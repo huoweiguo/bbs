@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+		<title>社区_圈子_列表页</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/header.js"></script>
+	</head>
+	<body>
+		<!--header-->
+		<div class="h-top">
+			<div class="h-top-inner clearfix">
+				<div class="h-top-left">
+	                <a href="http://www.wdzj.com" class="h-nav-home" target="_black"><i></i>网贷之家首页</a>
+					<span></span>
+					<a href="http://www.wdzj.com/news/" target="_black"><i></i>新闻</a>
+					<a href="http://www.wdzj.com/zhuanlan/" target="_black"><i></i>专栏</a>
+					<a href="http://www.wdzj.com/video/" target="_black"><i></i>视频</a>
+					<span></span>
+					<a href="http://www.wdzj.com/daohang.html" target="_black"><i></i>导航</a>
+					<a href="http://www.wdzj.com/dangan/" target="_black"><i></i>档案</a>
+					<a href="http://shuju.wdzj.com/" target="_black"><i></i>数据</a>
+					<a href="http://www.wdzj.com/pingji.html" target="_black"><i></i>评级</a>
+					<span></span>
+	                <a href="http://www.wdzj.com/p2phongbao/" target="_black"><i class="new"></i>红包</a>
+					<a href="http://bbs.wdzj.com/" target="_black"><i></i>社区</a>
+				</div>
+
+				<div class="h-top-right clearfix">
+					<div class="h-noLogin fleft" style="display: none;">
+	                    <a href="http://passport.wdzj.com/user/login">登录</a>
+						<a href="http://passport.wdzj.com/user/register">注册</a>
+					</div>
+	                <div class="h-isLogin fleft clearfix" style="display: none;">
+						<span class="fleft"><img src="http://bbs.wdzj.com/avatar/?uid=724194&type=big&rand=89355" onerror="this.onerror=null;this.src='http://bbs.wdzj.com//data/attachment/noavatar_small.gif'" class="h-top-head"></span>
+							<em class="h-username fleft">
+	                        <i onclick="location.href='http://member.wdzj.com/space-724194.html'">huoweiguo</i>
+							<div class="h-bell-div h-bell-one">
+								<i class="h-arrow"></i>
+								<a href="http://member.wdzj.com/member/thread">我的论坛</a>
+								<a href="http://member.wdzj.com/member/collect">我的收藏</a>
+								<a href="http://member.wdzj.com/member/focus">我的关注</a>
+								<a href="http://www.wdzj.com/wenda/user/ask/724194.html">我的问答</a>
+								<a href="http://baike.wdzj.com//user-space-724194.html ">我的百科</a>
+								<em class="split-line"></em>
+								<a href="http://member.wdzj.com/member/accout">账户设置</a>
+								<a href="http://passport.wdzj.com/user/logout">退出登录</a>
+							</div>
+						</em>
+						<em class="h-bell fleft">
+							<div class="h-bell-div h-bell-two">
+								<i class="h-arrow"></i>
+								<a href="http://member.wdzj.com/member/message?type=comment">评论 <em class="h-ts" id="comment"></em></a>
+								<a href="http://member.wdzj.com/member/message?type=private">私信 <em class="h-ts" id="private_message"></em></a>
+								<a href="http://member.wdzj.com/member/message?type=thread">帖子 <em class="h-ts" id="thread"></em></a>
+								<a href="http://member.wdzj.com/member/message?type=system">系统 <em class="h-ts" id="system"></em></a>
+							</div>
+						</em>
+	                    <em class="h-ts fleft" id="total"></em>
+					</div>    
+	                <div class="h-icon fleft clearfix">
+						<em href="javascript:;" class="h-phone">
+							<div class="h-div-tel">
+								<i class="h-arrow"></i>
+								<div><img src="http://bbs.wdzj.com/static/image/h-tel.png"><strong>400-882-1802</strong></div>
+								<div>周一至周五 9：00 -18：00</div>
+							</div>
+						</em>
+						<em href="javascript:;" class="h-mes">
+							<div class="h-weixin clearfix">
+								<i class="h-arrow"></i>
+								<div class="h-wx fleft">
+									<img src="http://bbs.wdzj.com/static/image/h-weixin.png" alt="网贷之家微信公众号">
+								</div>
+								<div class="fright"><img src="http://bbs.wdzj.com/static/image/h-ewm.png"></div>
+							</div>
+						</em>
+						<em href="javascript:;" class="h-qq">
+							<div class="h-qq-div clearfix">
+								<i class="h-arrow"></i>
+	                            <a class="h-qq-left fleft" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAxMjgyOF8xNTE5OTZfNDAwODgyMTgwMl8yXw" target="_black" ><img src="http://bbs.wdzj.com/static/image/h-qq.png" alt="在线客服" ></a>
+								<span class="h-qq-txt fright">
+									<span>投资人QQ群</span>
+									<strong>25278195</strong>
+								</span>
+							</div>
+						</em>
+	                    <a href="http://weibo.com/yesmyloan" class="h-wb" target="_black"></a>
+						<em href="javascript:;" class="h-tel">
+							<div class="h-phone-in">
+								<i class="h-arrow"></i>
+								<div class="h-phone-txt fleft">
+									<span>网贷之家官方App</span>
+									<a href="http://osscdn.wdzj.com/apk/wdzj.apk"  target="_black" class="an-btn">Android版下载</a>
+									<a href="https://itunes.apple.com/cn/app/wang-dai-zhi-jia/id687180281?mt=8" target="_black" class="an-iph">iPhone版下载</a>
+								</div>
+								<div class="h-phone-right fright"><img src="http://bbs.wdzj.com/static/image/h-phone-ewm.png"></div>
+							</div>
+						</em>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="logo-second">
+			<div class="logo-adv clearfix">
+				<div class="logo-img fleft"><img src="images/bbs-logo.jpg" alt="网贷人"> 所有网贷人都在这里</div>
+				<div class="logo-banner fright"></div>
+			</div>
+
+			<div class="bbs-menu clearfix">
+				<div class="bbs-menu-list fleft clearfix">
+					<a href="#" class="active">社区</a>
+					<a href="#">活动</a>
+					<a href="#">问答</a>
+					<a href="#">百科</a>
+					<a href="#">舆情</a>
+					<a href="#">学习</a>
+					<a href="#">新手入门</a>
+				</div>
+
+				<div class="bbs-search fright clearfix">
+					<input type="text" placeholder="请输入搜索内容" class="search-input fleft">
+					<div class="bbs-select fleft">
+						<span><i>帖子</i> <em class="rect-up"></em></span>
+						<ul class="head-select" style="display:none;">
+							<li>帖子</li>
+							<li>用户</li>
+						</ul>
+					</div>
+					<input type="button" value="" class="search-btn fleft">
+				</div>
+			</div>
+		</div>
+		
+		<!--advertise-->	
+		<div class="adv-img"></div>
+		
+		<!--container-->
+		<div class="bbs-container clearfix">
+			<div class="detail-list-left fleft">
+				<div class="conversation mb12">
+					<div class="conver-nav">网贷交流</div>
+					<div class="conversation-list">
+						<ul>
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-1"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">理财交流 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-2"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">网贷新手 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-3"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">问卷调查 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-4"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">参考观察 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-5"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">版务专区 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-6"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">活动专区 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-7"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">网贷测评 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-8"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">考察认证 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-9"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">行业研究 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="conversation mb12">
+					<div class="conver-nav">曝光台</div>
+					<div class="conversation-list">
+						<ul>
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-10"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">曝光台 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-11"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">平台质疑 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-12"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">平台事件 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-13"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">网贷维权 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>	
+
+				<div class="conversation">
+					<div class="conver-nav">平台圈</div>
+					<div class="conversation-list">
+						<ul>
+							<li>
+								<a href="#" target="_blank" class="b-icon"><img src="images/pic.jpg"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">理财交流 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon"><img src="images/pic.jpg"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">理财交流 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon"><img src="images/pic.jpg"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">理财交流 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon"><img src="images/pic.jpg"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">理财交流 <b>(237)</b></a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>五花八门的话题与观点，尽在交流区。</span>
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>	
+			</div>
+
+			<div class="detail-list-right fright">
+				<div class="recom-c">
+					<div class="bg-nav clearfix">
+						<span class="active">推荐圈子</span>
+						<a href="#" class="fright">更多&raquo;</a>
+					</div>
+					<div class="conversation-list">
+						<ul>
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-1"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">理财交流</a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-3"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">问卷调查</a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-5"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">版务专区</a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<a href="#" target="_blank" class="b-icon bbs-icon-7"></a>
+								<div class="conver-d">
+									<div class="conver-title clearfix">
+										<span class="title-list fleft"><a href="#" target="_blank">网贷测评</a></span>
+										<a href="javascript:;" class="bbs-btn1 fright">加入</a>
+									</div>
+									<div class="conver-li-txt">
+										<span>帖数：<i>5000</i>  成员：<i>25648</i></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--footer-->
+		<div class="bbs-footer">
+			<div class="footer-list clearfix">
+				<div class="bbs-wdzj fleft">
+					<h3>网贷之家</h3>
+					<div>
+						<a href="#" target="_blank">关于网贷之家</a>
+						<a href="#" target="_blank">大事件</a>
+						<a href="#" target="_blank">团队介绍</a>
+						<a href="#" target="_blank">诚聘英才</a>
+						<a href="#" target="_blank">网站地图</a>
+						<a href="#" target="_blank">隐私声明</a>
+						<a href="#" target="_blank">联系方式</a>
+						<a href="#" target="_blank">广告服务</a>
+						<a href="#" target="_blank">意见或建议</a>
+					</div>
+				</div>
+				<div class="bbs-wdzj fleft bbs-yc">
+					<h3>盈灿集团</h3>
+					<div>
+						<a href="#" target="_blank">网贷之家</a>
+						<a href="#" target="_blank">投之家</a>
+						<a href="#" target="_blank">盈灿资产</a>
+						<a href="#" target="_blank">盈灿科技</a>
+						<a href="#" target="_blank">盈灿咨询</a>
+						<a href="#" target="_blank">蜜蜂数据</a>
+						<a href="#" target="_blank">融之家</a>
+					</div>
+				</div>
+				<div class="bbs-zixun fleft ml75">
+					<h3>网贷咨询热线</h3>
+					<p class="fcred-1 ft18 mb5">400-882-1802</p>
+					<p class="fcgray-1 ft12">周一至周五 9:00-18:00</p>
+				</div>
+				<div class="bbs-about fleft ml75">
+					<h3>关注我们</h3>
+					<div class="h-icon fleft clearfix">
+						<em href="javascript:;" class="h-mes">
+							<div class="h-weixin clearfix">
+								<i class="h-arrow"></i>
+								<div class="h-wx fleft">
+									<img src="http://bbs.wdzj.com/static/image/h-weixin.png" alt="网贷之家微信公众号">
+								</div>
+								<div class="fright"><img src="http://bbs.wdzj.com/static/image/h-ewm.png"></div>
+							</div>
+						</em>
+						<em href="javascript:;" class="h-qq">
+							<div class="h-qq-div clearfix">
+								<i class="h-arrow"></i>
+	                            <a class="h-qq-left fleft" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAxMjgyOF8xNTE5OTZfNDAwODgyMTgwMl8yXw" target="_black" ><img src="http://bbs.wdzj.com/static/image/h-qq.png" alt="在线客服" ></a>
+								<span class="h-qq-txt fright">
+									<span>投资人QQ群</span>
+									<strong>25278195</strong>
+								</span>
+							</div>
+						</em>
+	                    <a href="http://weibo.com/yesmyloan" class="h-wb" target="_black"></a>
+						<em href="javascript:;" class="h-tel">
+							<div class="h-phone-in">
+								<i class="h-arrow"></i>
+								<div class="h-phone-txt fleft">
+									<span>网贷之家官方App</span>
+									<a href="http://osscdn.wdzj.com/apk/wdzj.apk"  target="_black" class="an-btn">Android版下载</a>
+									<a href="https://itunes.apple.com/cn/app/wang-dai-zhi-jia/id687180281?mt=8" target="_black" class="an-iph">iPhone版下载</a>
+								</div>
+								<div class="h-phone-right fright"><img src="http://bbs.wdzj.com/static/image/h-phone-ewm.png"></div>
+							</div>
+						</em>
+					</div>
+				</div>
+			</div>
+			<div class="bbs-copyright clearfix">
+				<div class="bbs-crl fleft">
+					<p>版权所有：上海盈灿投资管理咨询有限公司</p>
+					<p>Copyright @ 2011~2015 www.wdzj.com. All Rights Reserved.</p>
+					<p class="gray">增值电信业务经营许可证 沪B2-2015140 沪ICP备12033003号－1</p>
+				</div>
+
+				<div class="bbs-safe fright">
+					<div class="safe-list mb5">
+						<a href="#" target="_blank"><img src="images/p5_h.jpg" alt="安全网站"></a>
+						<a href="#" target="_blank"><img src="images/p2_h.jpg" alt="可信网站"></a>
+						<a href="#" target="_blank"><img src="images/hy_83x30.png" alt="行业验证"></a>
+						<a href="#" target="_blank"><img src="images/ft-1.jpg" alt="上海市互联网违法和不良信息举报中心"></a>
+					</div>
+					<div class="ft12 fcgray-1 tright"><img src="images/jc.jpg" class="vtm">沪公网安备 31010902045245号</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/bbs-index.js"></script>
+	</body>
+</html>

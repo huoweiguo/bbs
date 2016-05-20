@@ -1,0 +1,621 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+	    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+		<title>社区_帖子_详情页</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/header.js"></script>
+	</head>
+	<body>
+		<!--header-->
+		<div class="h-top">
+			<div class="h-top-inner clearfix">
+				<div class="h-top-left">
+	                <a href="http://www.wdzj.com" class="h-nav-home" target="_black"><i></i>网贷之家首页</a>
+					<span></span>
+					<a href="http://www.wdzj.com/news/" target="_black"><i></i>新闻</a>
+					<a href="http://www.wdzj.com/zhuanlan/" target="_black"><i></i>专栏</a>
+					<a href="http://www.wdzj.com/video/" target="_black"><i></i>视频</a>
+					<span></span>
+					<a href="http://www.wdzj.com/daohang.html" target="_black"><i></i>导航</a>
+					<a href="http://www.wdzj.com/dangan/" target="_black"><i></i>档案</a>
+					<a href="http://shuju.wdzj.com/" target="_black"><i></i>数据</a>
+					<a href="http://www.wdzj.com/pingji.html" target="_black"><i></i>评级</a>
+					<span></span>
+	                <a href="http://www.wdzj.com/p2phongbao/" target="_black"><i class="new"></i>红包</a>
+					<a href="http://bbs.wdzj.com/" target="_black"><i></i>社区</a>
+				</div>
+
+				<div class="h-top-right clearfix">
+					<div class="h-noLogin fleft" style="display: none;">
+	                    <a href="http://passport.wdzj.com/user/login">登录</a>
+						<a href="http://passport.wdzj.com/user/register">注册</a>
+					</div>
+	                <div class="h-isLogin fleft clearfix" style="display: none;">
+						<span class="fleft"><img src="http://bbs.wdzj.com/avatar/?uid=724194&type=big&rand=89355" onerror="this.onerror=null;this.src='http://bbs.wdzj.com//data/attachment/noavatar_small.gif'" class="h-top-head"></span>
+							<em class="h-username fleft">
+	                        <i onclick="location.href='http://member.wdzj.com/space-724194.html'">huoweiguo</i>
+							<div class="h-bell-div h-bell-one">
+								<i class="h-arrow"></i>
+								<a href="http://member.wdzj.com/member/thread">我的论坛</a>
+								<a href="http://member.wdzj.com/member/collect">我的收藏</a>
+								<a href="http://member.wdzj.com/member/focus">我的关注</a>
+								<a href="http://www.wdzj.com/wenda/user/ask/724194.html">我的问答</a>
+								<a href="http://baike.wdzj.com//user-space-724194.html ">我的百科</a>
+								<em class="split-line"></em>
+								<a href="http://member.wdzj.com/member/accout">账户设置</a>
+								<a href="http://passport.wdzj.com/user/logout">退出登录</a>
+							</div>
+						</em>
+						<em class="h-bell fleft">
+							<div class="h-bell-div h-bell-two">
+								<i class="h-arrow"></i>
+								<a href="http://member.wdzj.com/member/message?type=comment">评论 <em class="h-ts" id="comment"></em></a>
+								<a href="http://member.wdzj.com/member/message?type=private">私信 <em class="h-ts" id="private_message"></em></a>
+								<a href="http://member.wdzj.com/member/message?type=thread">帖子 <em class="h-ts" id="thread"></em></a>
+								<a href="http://member.wdzj.com/member/message?type=system">系统 <em class="h-ts" id="system"></em></a>
+							</div>
+						</em>
+	                    <em class="h-ts fleft" id="total"></em>
+					</div>    
+	                <div class="h-icon fleft clearfix">
+						<em href="javascript:;" class="h-phone">
+							<div class="h-div-tel">
+								<i class="h-arrow"></i>
+								<div><img src="http://bbs.wdzj.com/static/image/h-tel.png"><strong>400-882-1802</strong></div>
+								<div>周一至周五 9：00 -18：00</div>
+							</div>
+						</em>
+						<em href="javascript:;" class="h-mes">
+							<div class="h-weixin clearfix">
+								<i class="h-arrow"></i>
+								<div class="h-wx fleft">
+									<img src="http://bbs.wdzj.com/static/image/h-weixin.png" alt="网贷之家微信公众号">
+								</div>
+								<div class="fright"><img src="http://bbs.wdzj.com/static/image/h-ewm.png"></div>
+							</div>
+						</em>
+						<em href="javascript:;" class="h-qq">
+							<div class="h-qq-div clearfix">
+								<i class="h-arrow"></i>
+	                            <a class="h-qq-left fleft" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAxMjgyOF8xNTE5OTZfNDAwODgyMTgwMl8yXw" target="_black" ><img src="http://bbs.wdzj.com/static/image/h-qq.png" alt="在线客服" ></a>
+								<span class="h-qq-txt fright">
+									<span>投资人QQ群</span>
+									<strong>25278195</strong>
+								</span>
+							</div>
+						</em>
+	                    <a href="http://weibo.com/yesmyloan" class="h-wb" target="_black"></a>
+						<em href="javascript:;" class="h-tel">
+							<div class="h-phone-in">
+								<i class="h-arrow"></i>
+								<div class="h-phone-txt fleft">
+									<span>网贷之家官方App</span>
+									<a href="http://osscdn.wdzj.com/apk/wdzj.apk"  target="_black" class="an-btn">Android版下载</a>
+									<a href="https://itunes.apple.com/cn/app/wang-dai-zhi-jia/id687180281?mt=8" target="_black" class="an-iph">iPhone版下载</a>
+								</div>
+								<div class="h-phone-right fright"><img src="http://bbs.wdzj.com/static/image/h-phone-ewm.png"></div>
+							</div>
+						</em>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="logo-second">
+			<div class="logo-adv clearfix">
+				<div class="logo-img fleft"><img src="images/bbs-logo.jpg" alt="网贷人"> 所有网贷人都在这里</div>
+				<div class="logo-banner fright"></div>
+			</div>
+
+			<div class="bbs-menu clearfix">
+				<div class="bbs-menu-list fleft clearfix">
+					<a href="#" class="active">社区</a>
+					<a href="#">活动</a>
+					<a href="#">问答</a>
+					<a href="#">百科</a>
+					<a href="#">舆情</a>
+					<a href="#">学习</a>
+					<a href="#">新手入门</a>
+				</div>
+
+				<div class="bbs-search fright clearfix">
+					<input type="text" placeholder="请输入搜索内容" class="search-input fleft">
+					<div class="bbs-select fleft">
+						<span><i>帖子</i> <em class="rect-up"></em></span>
+						<ul class="head-select" style="display:none;">
+							<li>帖子</li>
+							<li>用户</li>
+						</ul>
+					</div>
+					<input type="button" value="" class="search-btn fleft">
+				</div>
+			</div>
+		</div>
+		
+		<!--advertise-->	
+		<div class="adv-img"></div>
+		
+		<!--container-->
+		<div class="bbs-container mb0 clearfix">
+			<div class="bbs-post-left fleft">
+				<div class="detail-commun clearfix">
+					<a href="javascript:;" class="commun-a fleft">
+						<img src="images/pic.jpg">
+					</a>
+
+					<div class="commun-licai fleft">
+						<div class="commun-lc-txt clearfix">
+							<a href="javascript:;" class="licai-a fleft">理财交流<span class="fcred-1">(237)</span></a>
+							<div class="commun-join fleft">已有<b class="red">5689</b>人加入 <a href="javascript:;" class="join-btn">加入</a></div>
+						</div>
+						<div class="commun-des">五花八门的话题与观点，尽在交流区。</div>
+					</div>
+
+					<a href="#" class="pub-btn2 fright">发表主题</a>
+				</div>
+				
+				<div class="post-pub-txt mb12">
+					<h2 class="context-title">【网信理财】新手注册，送红包，最高得150</h2>
+					<div class="post-time">
+						<span>发表于 2016-10-08  22：10</span>
+						<a href="javascript:;" class="bbs-btn4">只看TA</a>
+						<span><em class="eye-tb"></em> 12138</span>
+						<span><em class="mes-tb"></em> 626</span>
+					</div>
+					<div class="post-inner-txt">
+						先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+						<img src="images/img.jpg">
+						先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。
+
+						<div class="post-reward">
+							<a href="javascript:;" class="bbs-btn5"></a>
+							<div class="post-reward-des">大爷给个赏钱吧~~您的激励是楼主前进的动力！</div>
+							<div class="reward-list clearfix">
+								<span class="reward-ts fleft">共8人打赏888金币</span>
+								<span class="reward-head fleft">
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+									<a href="#" target="_blank"><img src="images/head.png"></a>
+
+									<a href="javascript:;" class="reward-more">...</a>
+								</span>
+							</div>
+						</div>
+						
+						<div class="mb12">
+							<a href="javascript:;" class="report repBtn">举报</a>
+							<a href="javascript:;" class="report delBtn">删除</a>
+							<a href="javascript:;" class="report topBtn">置顶</a>
+							<a href="javascript:;" class="report altBtn">警告</a>
+							<a href="javascript:;" class="report removeBtn">移除</a>
+							<a href="javascript:;" class="report commentBtn">置顶评论</a>
+						</div>
+
+						<div class="bbs-zambia clearfix">
+							<div class="fleft">
+								<a href="javascript:;" class="bbs-btn6"><em class="star"></em>235</a>
+								<a href="javascript:;" class="bbs-btn6"><em class="hand-u-act"></em>15</a>
+								<a href="javascript:;" class="bbs-btn6"><em class="hand-down"></em>40</a>
+							</div>
+
+							<div class="bbs-share fright">
+								<a href="javascript:;" class="report repBtn">举报</a>
+								<div class="bshare-custom"><div class="bsPromo bsPromo2"></div>分享到：<a title="分享到QQ空间" class="bshare-qzone h-mes"></a><a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a><a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="bbs-comment">
+					<div class="conver-nav clearfix">
+						<div class="fleft">评论 <span class="fcred-1">(32)</span></div>
+						<div class="nav-list fright">
+							<em class="active">全部</em>
+							<em>最新</em>
+							<em>热门</em>
+						</div>
+					</div>
+
+					<div class="bbs-comment-list mb12">
+						<ul>
+							<li>
+								<div class="clearfix">
+									<a href="#" class="comment-head fleft"><img src="images/head.png"></a>
+									<div class="comment-list fright">
+										<div class="comment-nav clearfix">
+											<span class="fleft">
+												<a href="#" class="ctitle">放肆的风</a>
+												<span class="comment-time">7分钟前</span>
+												<a href="javascript:;" class="bbs-btn4">只看TA</a>
+											</span>	
+											<a href="javascript:;" class="report fright">举报</a>
+										</div>
+										<div class="comment-inner mb20">
+											先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。
+										</div>
+										
+										<a href="javascript:;" class="bbs-btn6"><em class="hand-up"></em>15</a>
+										<a href="javascript:;" class="bbs-btn6">回复</a>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<div class="clearfix">
+									<a href="#" class="comment-head fleft"><img src="images/head.png"></a>
+									<div class="comment-list fright">
+										<div class="comment-nav clearfix">
+											<span class="fleft">
+												<a href="#" class="ctitle">放肆的风</a>
+												<span class="comment-time">7分钟前</span>
+												<a href="javascript:;" class="bbs-btn4">只看TA</a>
+											</span>	
+											<a href="javascript:;" class="report fright">举报</a>
+										</div>
+										<div class="comment-inner mb20">
+											先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。
+										</div>
+										
+										<a href="javascript:;" class="bbs-btn6"><em class="hand-up"></em>15</a>
+										<a href="javascript:;" class="bbs-btn6">回复</a>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<div class="clearfix">
+									<a href="#" class="comment-head fleft"><img src="images/head.png"></a>
+									<div class="comment-list fright">
+										<div class="comment-nav clearfix">
+											<span class="fleft">
+												<a href="#" class="ctitle">放肆的风</a>
+												<span class="comment-time">7分钟前</span>
+												<a href="javascript:;" class="bbs-btn4">只看TA</a>
+											</span>	
+											<a href="javascript:;" class="report cdelete fright">删除</a>
+										</div>
+										<div class="comment-inner mb20">
+											<p>先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。先说说我本人的经历吧：我2006年2月开户进入股市，那时候才大三，最初拿着3000元的奖学金就进入了这个大赌场。</p>
+											<p><img src="images/img2.jpg"></p>
+										</div>
+										
+										<a href="javascript:;" class="bbs-btn6"><em class="hand-up"></em>15</a>
+										<a href="javascript:;" class="bbs-btn6">回复</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+
+						<div class="detail-page">
+							<a href="javascript:;">首页</a>
+							<a href="javascript:;">上一页</a>
+							<a href="javascript:;" class="active">1</a>
+							<a href="javascript:;">2</a>
+							<a href="javascript:;">下一页</a>
+							<a href="javascript:;">末页</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="comment-publish mb12 clearfix" id="fixPub">
+					<a href="#" class="cpub fleft">
+						<img src="images/head.png">
+					</a>
+
+					<div class="editorBox fleft mb20" id="editorbox">
+		                <div id="postbox">
+		                   <textarea id="editor_id" name="message" class="carea"></textarea>
+		                </div>      
+					</div>
+					<div class="commenting tright">
+						<em class="bbs-chk" data-val="false"></em> 勾选跳转最后一页
+						<a href="javascript:;" class="bbs-btn7">发布</a>
+					</div>	
+				</div>
+
+				<div class="publish-box clearfix"><!--replyfix-->
+					<input type="text" class="pub-txt fleft">
+					<input type="button" class="pub-btn1 fleft" value="回复">
+				</div>
+			</div>
+
+			<div class="bbs-post-right fright">
+				<div class="comment-person mb12">
+					<div class="clearfix plr17">
+						<a href="#" class="cp-head fleft"><img src="images/head2.jpg"></a>
+						<div class="cp-right fright">
+							<div class="mb12"><em class="cp-female"></em> <a href="#" class="atitle">放肆的风</a></div>
+							<div class="clearfix mb25"><a href="javascript:;" class="bbs-btn2 fleft">关注</a><a href="javascript:;" class="bbs-btn2 ml12 fleft">私信</a></div>
+							<div class="cp-tz"><em class="tz-2"></em> 投资人 <span class="blue-2">(230积分)</span></div>
+						</div>
+					</div>
+
+					<div class="number-list clearfix">
+						<a href="#"><span>18</span><i>平台</i></a>
+						<a href="#"><span>23</span><i>投友</i></a>
+						<a href="#"><span>14</span><i>粉丝</i></a>
+						<a href="#"><span>18</span><i>作家</i></a>		
+					</div>
+
+					<div class="cp-list">
+						<div class="clearfix plr17">
+							<span class="cp-art fleft">TA最近的文章</span>
+							<a href="#" class="cp-more fright">更多 &raquo;</a>
+						</div>
+						<div class="hot-list">
+							<div class="bbs-wmtotal bbs-wmtcur">
+								<ul>
+									<li><em>1</em><a href="#">aaaaaaaaaaaaaaa</a></li>
+									<li><em>2</em><a href="#">投资P2P,如何避免资金站岗呢，啊？</a></li>
+									<li><em>3</em><a href="#">投资P2P,如何避免?</a></li>
+									<li><em>4</em><a href="#">投资P2P,如何避免资金站岗？</a></li>
+									<li><em>5</em><a href="#">投资P2P,如何避免资金站岗？</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bbs-hot">
+					<div class="bg-nav clearfix">
+						<span class="active">推荐帖子</span>
+					</div>
+					
+					<div class="hot-list">
+						<div class="bbs-wmtotal bbs-wmtcur">
+							<ul>
+								<li><em>1</em><a href="#">aaaaaaaaaaaaaaa</a></li>
+								<li><em>2</em><a href="#">投资P2P,如何避免资金站岗呢，啊？</a></li>
+								<li><em>3</em><a href="#">投资P2P,如何避免?</a></li>
+								<li><em>4</em><a href="#">投资P2P,如何避免资金站岗？</a></li>
+								<li><em>5</em><a href="#">投资P2P,如何避免资金站岗？</a></li>
+								<li><em>6</em><a href="#">投资P2P,如何避免？</a></li>
+								<li><em>7</em><a href="#">投资P2P,如何避免资金站岗？</a></li>
+								<li><em>8</em><a href="#">投资P2P,如何避免资金站岗？</a></li>
+								<li><em>9</em><a href="#">投资P2P,如何避免资金站岗？</a></li>
+								<li><em>10</em><a href="#">投资P2P,如何避免资金站岗？</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--footer-->
+		<div class="bbs-footer">
+			<div class="footer-list clearfix">
+				<div class="bbs-wdzj fleft">
+					<h3>网贷之家</h3>
+					<div>
+						<a href="#" target="_blank">关于网贷之家</a>
+						<a href="#" target="_blank">大事件</a>
+						<a href="#" target="_blank">团队介绍</a>
+						<a href="#" target="_blank">诚聘英才</a>
+						<a href="#" target="_blank">网站地图</a>
+						<a href="#" target="_blank">隐私声明</a>
+						<a href="#" target="_blank">联系方式</a>
+						<a href="#" target="_blank">广告服务</a>
+						<a href="#" target="_blank">意见或建议</a>
+					</div>
+				</div>
+				<div class="bbs-wdzj fleft bbs-yc">
+					<h3>盈灿集团</h3>
+					<div>
+						<a href="#" target="_blank">网贷之家</a>
+						<a href="#" target="_blank">投之家</a>
+						<a href="#" target="_blank">盈灿资产</a>
+						<a href="#" target="_blank">盈灿科技</a>
+						<a href="#" target="_blank">盈灿咨询</a>
+						<a href="#" target="_blank">蜜蜂数据</a>
+						<a href="#" target="_blank">融之家</a>
+					</div>
+				</div>
+				<div class="bbs-zixun fleft ml75">
+					<h3>网贷咨询热线</h3>
+					<p class="fcred-1 ft18 mb5">400-882-1802</p>
+					<p class="fcgray-1 ft12">周一至周五 9:00-18:00</p>
+				</div>
+				<div class="bbs-about fleft ml75">
+					<h3>关注我们</h3>
+					<div class="h-icon fleft clearfix">
+						<em href="javascript:;" class="h-mes">
+							<div class="h-weixin clearfix">
+								<i class="h-arrow"></i>
+								<div class="h-wx fleft">
+									<img src="http://bbs.wdzj.com/static/image/h-weixin.png" alt="网贷之家微信公众号">
+								</div>
+								<div class="fright"><img src="http://bbs.wdzj.com/static/image/h-ewm.png"></div>
+							</div>
+						</em>
+						<em href="javascript:;" class="h-qq">
+							<div class="h-qq-div clearfix">
+								<i class="h-arrow"></i>
+	                            <a class="h-qq-left fleft" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAxMjgyOF8xNTE5OTZfNDAwODgyMTgwMl8yXw" target="_black" ><img src="http://bbs.wdzj.com/static/image/h-qq.png" alt="在线客服" ></a>
+								<span class="h-qq-txt fright">
+									<span>投资人QQ群</span>
+									<strong>25278195</strong>
+								</span>
+							</div>
+						</em>
+	                    <a href="http://weibo.com/yesmyloan" class="h-wb" target="_black"></a>
+						<em href="javascript:;" class="h-tel">
+							<div class="h-phone-in">
+								<i class="h-arrow"></i>
+								<div class="h-phone-txt fleft">
+									<span>网贷之家官方App</span>
+									<a href="http://osscdn.wdzj.com/apk/wdzj.apk"  target="_black" class="an-btn">Android版下载</a>
+									<a href="https://itunes.apple.com/cn/app/wang-dai-zhi-jia/id687180281?mt=8" target="_black" class="an-iph">iPhone版下载</a>
+								</div>
+								<div class="h-phone-right fright"><img src="http://bbs.wdzj.com/static/image/h-phone-ewm.png"></div>
+							</div>
+						</em>
+					</div>
+				</div>
+			</div>
+			<div class="bbs-copyright clearfix">
+				<div class="bbs-crl fleft">
+					<p>版权所有：上海盈灿投资管理咨询有限公司</p>
+					<p>Copyright @ 2011~2015 www.wdzj.com. All Rights Reserved.</p>
+					<p class="gray">增值电信业务经营许可证 沪B2-2015140 沪ICP备12033003号－1</p>
+				</div>
+
+				<div class="bbs-safe fright">
+					<div class="safe-list mb5">
+						<a href="#" target="_blank"><img src="images/p5_h.jpg" alt="安全网站"></a>
+						<a href="#" target="_blank"><img src="images/p2_h.jpg" alt="可信网站"></a>
+						<a href="#" target="_blank"><img src="images/hy_83x30.png" alt="行业验证"></a>
+						<a href="#" target="_blank"><img src="images/ft-1.jpg" alt="上海市互联网违法和不良信息举报中心"></a>
+					</div>
+					<div class="ft12 fcgray-1 tright"><img src="images/jc.jpg" class="vtm">沪公网安备 31010902045245号</div>
+				</div>
+			</div>
+		</div>
+
+		<!--弹窗-->
+		<div class="mask" style="display:none;"></div>
+		<div class="private" style="display:none;">
+			<a class="close" href="javascript:;"></a>
+			<div class="nav-title">私信给 <span>grayglobe</span></div>
+			<textarea class="mes-area" maxlength="500" onchange="this.value=this.value.substring(0, 500)"></textarea>
+			<div class="box-fs tright">你还可以输入<span>500</span>字<input type="button" value="发送" class="fasong"></div>
+		</div>
+
+		<div class="cr-box faild" style="display:none;"><!--success-->
+			<em></em><span>发送成功</span>
+		</div>
+		
+		<div class="commonBox" style="display:none"><!--bPost bTop bTComment bReport bAlert bMove-->
+			<em class="close-b"></em>
+			<div class="box-ts">选择了1篇帖子</div>
+			
+			<!--删除弹框-->
+			<div class="boxPost">
+				<div class="mb5">您确认要 <b class="fcblack">删除</b> 选择的主题么？</div>
+				<div class="blue mb5">操作原因：</div>
+				<div class="selbox">
+					<div class="selectBtn clearfix">
+						<span class="selin fleft" value="1">请选择理由</span>
+						<em class="seltb down fright"></em>
+					</div>
+					<ul style="display:none;">
+						<li>实在是看你不顺畅</li>
+						<li>来打我呀</li>
+					</ul>
+				</div>
+
+				<textarea class="postArea"></textarea>
+			</div>
+			
+			<!--置顶精华弹框-->	
+			<div class="boxTop">
+				<div class="boxChk">
+					<p><em class="bbs-chk" data-val="false"></em> 置顶</p>
+					<p><em class="bbs-chk" data-val="false"></em> 精华</p>
+				</div>
+				<div class="blue mb5">操作原因：</div>
+				<textarea class="topArea"></textarea>
+			</div>
+			
+			<!--置顶评论弹框-->
+			<div class="boxTopComment">
+				<div class="boxChk">
+					<p><em class="bbs-chk" data-val="false"></em> 置顶</p>
+				</div>
+				<div class="blue mb5">操作原因：</div>
+				<textarea class="topArea"></textarea>
+			</div>
+
+			<!--举报弹窗-->
+			<div class="boxReport">
+				<p><input type="radio" name="report" value="1"> 广告垃圾</p>
+				<p><input type="radio" name="report" value="2"> 违规内容</p>
+				<p><input type="radio" name="report" value="3"> 恶意灌水</p>
+				<p><input type="radio" name="report" value="4"> 重复发帖</p>
+				<p><input type="radio" name="report" value="5"> 其他</p>
+			</div>
+
+			<!--警告弹框-->
+			<div class="boxAlert">
+				<div class="chkClass mb12">
+					<p><input type="radio" name="alert" value="0"> 警告</p>
+					<p><input type="radio" name="alert" value="1"> 解除</p>
+				</div>
+				<div class="tright">用户已被警告 0 次</div>
+				<div class="blue mb5">操作原因：</div>
+				<div class="selbox">
+					<div class="selectBtn clearfix">
+						<span class="selin fleft" value="1">请选择理由</span>
+						<em class="seltb down fright"></em>
+					</div>
+					<ul style="display:none;">
+						<li>实在是看你不顺畅</li>
+						<li>来打我呀</li>
+					</ul>
+				</div>
+
+				<textarea class="postArea"></textarea>
+			</div>
+			
+			<!--移动弹框-->
+			<div class="boxMove">
+				<span class="blue plate-span fleft">目标板块：</span>
+				<div class="selbox plate fleft">
+					<div class="selectBtn clearfix">
+						<span class="selin fleft" value="1">请选择板块</span>
+						<em class="seltb down fright"></em>
+					</div>
+					<ul style="display:none;">
+						<li>实在是看你不顺畅</li>
+						<li>来打我呀</li>
+					</ul>
+				</div>
+				<div class="blue mb5">操作原因：</div>
+				<div class="selbox">
+					<div class="selectBtn clearfix">
+						<span class="selin fleft" value="1">请选择理由</span>
+						<em class="seltb down fright"></em>
+					</div>
+					<ul style="display:none;">
+						<li>实在是看你不顺畅</li>
+						<li>来打我呀</li>
+					</ul>
+				</div>
+
+				<textarea class="postArea"></textarea>
+			</div>
+
+
+			<div class="comsure">
+				<input type="button" value="确定" class="sure-btn">
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/bbs-index.js"></script>
+		<script charset="utf-8" src="./js/kindeditor.js"></script>
+       	<script>
+           	var options = {
+                    filterMode : true,
+                    allowFlashUpload:false,
+                    allowMediaUpload:false,
+                    items:['emoticons','image','bold','italic','underline','fontname','fontsize','forecolor','formatblock','lineheight','insertunorderedlist','insertorderedlist','justifycenter','justifyright','justifyleft','link','unlink','hr','table','preview'],
+                   uploadJson : '',
+            };
+            KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id',options);
+            });
+       	</script>
+	</body>
+</html>
